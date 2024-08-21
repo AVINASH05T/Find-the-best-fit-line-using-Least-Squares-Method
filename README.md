@@ -1,3 +1,6 @@
+# EXPERIMENT NO:1
+### NAME : AVINASH T
+### REG NO: 212223230026
 # Implementation of Univariate Linear Regression
 ## AIM:
 To implement univariate Linear Regression to fit a straight line using least squares.
@@ -17,16 +20,33 @@ To implement univariate Linear Regression to fit a straight line using least squ
 6. Obtain the straight line equation Y=mX+b and plot the scatterplot.
 
 ## Program:
-```
-/*
-Program to implement univariate Linear Regression to fit a straight line using least squares.
-Developed by: 
-RegisterNumber:  
-*/
+```c
+#Program to implement univariate Linear Regression to fit a straight line using least squares.
+#Developed by: AVINASH T
+#RegisterNumber:  212223230026
+import numpy as np
+import matplotlib.pyplot as plt
+x=np.array(eval(input()))
+y=np.array(eval(input()))
+xmean=np.mean(x)
+ymean=np.mean(y)
+num,den=0,0
+for i in range(len(x)):
+    num+=(x[i]-xmean)*(y[i]-ymean)
+    den+=(x[i]-xmean)**2
+m=num/den
+c=ymean-(m*xmean)
+print(m,c)
+y_pred=m*x+c
+print(y_pred)
+plt.scatter(x,y)
+plt.plot(x,y_pred,color="red")
+plt.show()
 ```
 
 ## Output:
-![best fit line](sam.png)
+![image](https://github.com/user-attachments/assets/229db537-9e5e-4333-9beb-20ee0fef2d7e)
+![image](https://github.com/user-attachments/assets/54b5e815-ecb0-4f84-adc0-13566159a75f)
 
 
 ## Result:
